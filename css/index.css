@@ -210,8 +210,7 @@ template {
 .fontawesomeIcon,
 hr:before,
 #post .post-copyright:before,
-#post .post-outdate-notice:before,
-.note:not(.no-icon)::before {
+#post .post-outdate-notice:before {
   display: inline-block;
   font-weight: 600;
   font-family: 'Font Awesome 6 Free';
@@ -1524,14 +1523,14 @@ blockquote > :last-child {
   margin-bottom: 0 !important;
 }
 :root {
-  --hl-color: #eff;
-  --hl-bg: #212121;
-  --hltools-bg: #1c1c1c;
-  --hltools-color: rgba(238,255,255,0.8);
-  --hlnumber-bg: #212121;
-  --hlnumber-color: rgba(238,255,255,0.5);
-  --hlscrollbar-bg: #353535;
-  --hlexpand-bg: linear-gradient(180deg, rgba(33,33,33,0.6), rgba(33,33,33,0.9));
+  --hl-color: #90a4ae;
+  --hl-bg: #f6f8fa;
+  --hltools-bg: #e6ebf1;
+  --hltools-color: #90a4ae;
+  --hlnumber-bg: #f6f8fa;
+  --hlnumber-color: rgba(144,164,174,0.5);
+  --hlscrollbar-bg: #dce4eb;
+  --hlexpand-bg: linear-gradient(180deg, rgba(246,248,250,0.6), rgba(246,248,250,0.9));
 }
 figure.highlight table {
   scrollbar-color: var(--hlscrollbar-bg) transparent;
@@ -1546,10 +1545,10 @@ figure.highlight pre .addition {
   color: #105ede;
 }
 figure.highlight pre .meta {
-  color: #c792ea;
+  color: #7c4dff;
 }
 figure.highlight pre .comment {
-  color: #969896;
+  color: rgba(149,165,166,0.8);
 }
 figure.highlight pre .variable,
 figure.highlight pre .attribute,
@@ -1563,10 +1562,10 @@ figure.highlight pre .css .id,
 figure.highlight pre .tag .name,
 figure.highlight pre .css .class,
 figure.highlight pre .css .pseudo {
-  color: #ff5370;
+  color: #e53935;
 }
 figure.highlight pre .tag {
-  color: #89ddff;
+  color: #39adb5;
 }
 figure.highlight pre .number,
 figure.highlight pre .preprocessor,
@@ -1574,10 +1573,10 @@ figure.highlight pre .literal,
 figure.highlight pre .params,
 figure.highlight pre .constant,
 figure.highlight pre .command {
-  color: #f78c6c;
+  color: #f76d47;
 }
 figure.highlight pre .built_in {
-  color: #ffcb6b;
+  color: #ffb62c;
 }
 figure.highlight pre .ruby .class .title,
 figure.highlight pre .css .rules .attribute,
@@ -1590,12 +1589,12 @@ figure.highlight pre .xml .cdata,
 figure.highlight pre .special,
 figure.highlight pre .number,
 figure.highlight pre .formula {
-  color: #c3e88d;
+  color: #91b859;
 }
 figure.highlight pre .keyword,
 figure.highlight pre .title,
 figure.highlight pre .css .hexcolor {
-  color: #89ddff;
+  color: #39adb5;
 }
 figure.highlight pre .function,
 figure.highlight pre .python .decorator,
@@ -1605,14 +1604,14 @@ figure.highlight pre .ruby .title .keyword,
 figure.highlight pre .perl .sub,
 figure.highlight pre .javascript .title,
 figure.highlight pre .coffeescript .title {
-  color: #82aaff;
+  color: #6182b8;
 }
 figure.highlight pre .tag .attr,
 figure.highlight pre .javascript .function {
-  color: #c792ea;
+  color: #7c4dff;
 }
 #article-container figure.highlight .line.marked {
-  background-color: rgba(97,97,97,0.314);
+  background-color: rgba(128,203,196,0.251);
 }
 #article-container figure.highlight table {
   display: block;
@@ -1787,8 +1786,8 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight {
   margin: 0 0 24px;
   border-radius: 7px;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(144,164,174,0.4);
+  box-shadow: 0 5px 10px 0 rgba(144,164,174,0.4);
   -webkit-transform: translateZ(0);
 }
 #article-container figure.highlight .highlight-tools:after {
@@ -4721,7 +4720,7 @@ blockquote.pullquote.right {
 .note h4,
 .note h5,
 .note h6 {
-  margin-top: 3px;
+  margin-top: 0;
   margin-bottom: 0;
   padding-top: 0 !important;
   border-bottom: initial;
@@ -4743,15 +4742,6 @@ blockquote.pullquote.right {
 .note blockquote:last-child,
 .note img:last-child {
   margin-bottom: 0 !important;
-}
-.note:not(.no-icon) {
-  padding-left: 3em;
-}
-.note:not(.no-icon)::before {
-  position: absolute;
-  top: calc(50% - 0.95em);
-  left: 0.8em;
-  font-size: larger;
 }
 .note.default.flat {
   background: #f7f7f7;
@@ -4775,12 +4765,6 @@ blockquote.pullquote.right {
 .note.default:not(.modern) h4,
 .note.default:not(.modern) h5,
 .note.default:not(.modern) h6 {
-  color: #777;
-}
-.note.default:not(.no-icon)::before {
-  content: '\f0a9';
-}
-.note.default:not(.no-icon):not(.modern)::before {
   color: #777;
 }
 .note.primary.flat {
@@ -4807,12 +4791,6 @@ blockquote.pullquote.right {
 .note.primary:not(.modern) h6 {
   color: #6f42c1;
 }
-.note.primary:not(.no-icon)::before {
-  content: '\f055';
-}
-.note.primary:not(.no-icon):not(.modern)::before {
-  color: #6f42c1;
-}
 .note.info.flat {
   background: #eef7fa;
 }
@@ -4835,12 +4813,6 @@ blockquote.pullquote.right {
 .note.info:not(.modern) h4,
 .note.info:not(.modern) h5,
 .note.info:not(.modern) h6 {
-  color: #428bca;
-}
-.note.info:not(.no-icon)::before {
-  content: '\f05a';
-}
-.note.info:not(.no-icon):not(.modern)::before {
   color: #428bca;
 }
 .note.success.flat {
@@ -4867,12 +4839,6 @@ blockquote.pullquote.right {
 .note.success:not(.modern) h6 {
   color: #5cb85c;
 }
-.note.success:not(.no-icon)::before {
-  content: '\f058';
-}
-.note.success:not(.no-icon):not(.modern)::before {
-  color: #5cb85c;
-}
 .note.warning.flat {
   background: #fdf8ea;
 }
@@ -4897,12 +4863,6 @@ blockquote.pullquote.right {
 .note.warning:not(.modern) h6 {
   color: #f0ad4e;
 }
-.note.warning:not(.no-icon)::before {
-  content: '\f06a';
-}
-.note.warning:not(.no-icon):not(.modern)::before {
-  color: #f0ad4e;
-}
 .note.danger.flat {
   background: #fcf1f2;
 }
@@ -4925,12 +4885,6 @@ blockquote.pullquote.right {
 .note.danger:not(.modern) h4,
 .note.danger:not(.modern) h5,
 .note.danger:not(.modern) h6 {
-  color: #d9534f;
-}
-.note.danger:not(.no-icon)::before {
-  content: '\f056';
-}
-.note.danger:not(.no-icon):not(.modern)::before {
   color: #d9534f;
 }
 #article-container .tabs {
@@ -5254,9 +5208,6 @@ blockquote.pullquote.right {
   background: #2c2c2c !important;
 }
 [data-theme='dark'] #post-comment #comment-switch .switch-btn {
-  filter: brightness(0.8);
-}
-[data-theme='dark'] .note {
   filter: brightness(0.8);
 }
 [data-theme='dark'] .hide-button,
