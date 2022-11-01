@@ -141,13 +141,31 @@
       }
     }
     detectApple()
-    })(window)</script><script src="https://assets.akilar.top/js/SAO-Notify.js" async></script><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="space-scene"><div class="space-wrap"><div class="space-wall space-wall-right"></div><div class="space-wall space-wall-left"></div><div class="space-wall space-wall-top"></div><div class="space-wall space-wall-bottom"></div><div class="space-wall space-wall-back"></div></div><div class="space-wrap"><div class="space-wall space-wall-right"></div><div class="space-wall space-wall-left"></div><div class="space-wall space-wall-top"></div><div class="space-wall space-wall-bottom"></div><div class="space-wall space-wall-back"></div></div></div></div><script async="async">const preloader = {
+    })(window)</script><script src="https://assets.akilar.top/js/SAO-Notify.js" async></script><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="SAO-scene"><div class="SAO-wrap"><div class="SAO-wall SAO-wall-right"></div><div class="SAO-wall SAO-wall-left"></div><div class="SAO-wall SAO-wall-top"></div><div class="SAO-wall SAO-wall-bottom"></div><div class="SAO-wall SAO-wall-back"></div></div><div class="SAO-wrap"><div class="SAO-wall SAO-wall-right"></div><div class="SAO-wall SAO-wall-left"></div><div class="SAO-wall SAO-wall-top"></div><div class="SAO-wall SAO-wall-bottom"></div><div class="SAO-wall SAO-wall-back"></div></div></div></div><script async="async">const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
+    //- document.getElementById('loading-box').classList.add("loaded")
+    document.getElementById('loading-box').style.transition = 'opacity 3s';
+    document.getElementById('loading-box').style.opacity = '0';
+    setTimeout(function(){
+      document.getElementById('loading-box').classList.add("loaded")
+    },3000)
+    //用于判断是否第一次加载
+    if(sessionStorage.getItem("isReload")){
+       //若显示已经加载过
+       return true
+    }else{
+      //若为第一次加载
+     sessionStorage.setItem("isReload", true)
+     document.body.insertAdjacentHTML('beforeend',`<div id="SAO-Welcome" style="position: fixed;display: block;background: transparent;top: calc(50% - 250px);z-index: 1000;left: 0;right: 0;margin: auto auto;font-family: 'SAOUI';font-size: 8vw;width: fit-content;height: fit-content;color: rgba(201, 202, 203,0.7);text-decoration: underline 2vw rgba(201, 202, 203,0.7);">Welcome to Sward Art Online !</div>`)
+     SAONotify('Welcome','欢迎光临糖果屋<br>愿你享受愉快的一天')
+     setTimeout(function(){document.getElementById("SAO-Welcome").remove();},3000)
+    }      
   },
   initLoading: () => {
     document.body.style.overflow = '';
+    document.getElementById('loading-box').style.transition = '';
+    document.getElementById('loading-box').style.opacity = '1';  
     document.getElementById('loading-box').classList.remove("loaded")
 
   }
