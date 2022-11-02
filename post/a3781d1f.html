@@ -155,7 +155,7 @@
 }
 window.addEventListener('load',()=> { preloader.endLoading() })
 document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})
-
+setTimeout(function(){preloader.endLoading();}, 5000);
 if (false) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
